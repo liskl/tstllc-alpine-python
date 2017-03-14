@@ -49,15 +49,6 @@ pipeline:
         include: [ '3.4-slim', 'master' ]
     force_tag: true
 
-#publish:
-#  docker:
-#    repo: registry.liskl.com/tstllc/alpine-ftp
-#    tag:
-#      - latest
-#    when:
-#      branch:
-#        include: [ master, release/* ]
-
 publish:
   docker:
     repo: registry.liskl.com/tstllc/alpine-python

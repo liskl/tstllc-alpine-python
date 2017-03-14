@@ -3,11 +3,50 @@ pipeline:
     image: plugins/docker
     repo: registry.liskl.com/tstllc/alpine-python
     dockerfile: ./2.7/Dockerfile
+    context: ./2.7/
     tag:
       - '2.7'
     when:
       branch:
-        include: [ '2.7' ]
+        include: [ '2.7', 'master' ]
+    force_tag: true
+
+  docker:
+    image: plugins/docker
+    repo: registry.liskl.com/tstllc/alpine-python
+    dockerfile: ./2.7-slim/Dockerfile
+    context: ./2.7-slim/
+    tag:
+      - '2.7-slim'
+    when:
+      branch:
+        include: [ '2.7-slim', 'master' ]
+    force_tag: true
+
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: registry.liskl.com/tstllc/alpine-python
+    dockerfile: ./3.4/Dockerfile
+    context: ./3.4/
+    tag:
+      - '3.4'
+    when:
+      branch:
+        include: [ '3.4', 'master' ]
+    force_tag: true
+
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: registry.liskl.com/tstllc/alpine-python
+    dockerfile: ./3.4-slim/Dockerfile
+    context: ./3.4-slim/
+    tag:
+      - '3.4-slim'
+    when:
+      branch:
+        include: [ '3.4-slim', 'master' ]
     force_tag: true
 
 #publish:
@@ -19,12 +58,12 @@ pipeline:
 #      branch:
 #        include: [ master, release/* ]
 
-#publish:
-#  docker:
-#    repo: registry.liskl.com/tstllc/alpine-ftp
-#    tag:
+publish:
+  docker:
+    repo: registry.liskl.com/tstllc/alpine-python
+    tag:
 #      - ${DRONE_BRANCH}-latest
-#      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
-#    when:
-#      branch:
-#        exclude: [ master ]
+      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+    when:
+      branch:
+        exclude: [ master, 2.7, 2.7-slim, 3.4, 3.4-slim ]

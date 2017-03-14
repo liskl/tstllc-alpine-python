@@ -1,4 +1,7 @@
-FROM tstllc-base
+FROM registry.liskl.com/tstllc/alpine-base:latest
+
+# Dev-Ops Team
+MAINTAINER dl_team_devops@tstllc.net
 
 # These are always installed. Notes:
 #   * dumb-init: a proper init system for containers, to reap zombie children
@@ -61,4 +64,3 @@ ENV BUILD_PACKAGES="\
 #   * Reads the -p flags and /requirements.txt for Pip packages
 #   * Reads the -r flag to specify a different file path for /requirements.txt
 ENTRYPOINT ["/usr/bin/dumb-init", "bash", "/entrypoint.sh"]
-

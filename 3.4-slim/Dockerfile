@@ -1,4 +1,7 @@
-FROM tstllc-base
+FROM registry.liskl.com/tstllc/alpine-base:latest
+
+# Dev-Ops Team
+MAINTAINER dl_team_devops@tstllc.net
 
 # These are always installed. Notes:
 #   * dumb-init: a proper init system for containers, to reap zombie children

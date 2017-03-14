@@ -2,6 +2,8 @@
 
 A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/).
 
+setting up for [ 2.7, 2.7-slim, 3.4, 3.4-slim ]
+
 ## REQUIREMENTS
 Docker Containers:
 * tstllc-base:latest
@@ -199,4 +201,3 @@ Perhaps this could be even smaller, but I'm not an Alpine guru. **Feel free to p
 
 ---
 Completely ripped off from [jfloff](https://github.com/jfloff/alpine-python), and modded to use the tstllc-base image.
-

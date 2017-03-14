@@ -7,7 +7,7 @@ pipeline:
       - '2.7'
     when:
       branch:
-        include: [ '2.7' ]
+        include: [ '2.7', 'master' ]
     force_tag: true
 
   docker:
@@ -18,7 +18,7 @@ pipeline:
       - '2.7-slim'
     when:
       branch:
-        include: [ '2.7-slim' ]
+        include: [ '2.7-slim', 'master' ]
     force_tag: true
 
 pipeline:
@@ -30,7 +30,7 @@ pipeline:
       - '3.4'
     when:
       branch:
-        include: [ '3.4' ]
+        include: [ '3.4', 'master' ]
     force_tag: true
 
 pipeline:
@@ -42,7 +42,7 @@ pipeline:
       - '3.4-slim'
     when:
       branch:
-        include: [ '3.4-slim' ]
+        include: [ '3.4-slim', 'master' ]
     force_tag: true
 
 #publish:
@@ -56,7 +56,7 @@ pipeline:
 
 publish:
   docker:
-    repo: registry.liskl.com/tstllc/alpine-ftp
+    repo: registry.liskl.com/tstllc/alpine-python
     tag:
 #      - ${DRONE_BRANCH}-latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}

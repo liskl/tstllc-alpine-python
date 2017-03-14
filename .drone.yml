@@ -6,9 +6,6 @@ pipeline:
     context: ./2.7/
     tag:
       - '2.7'
-    when:
-      branch:
-        include: [ '2.7', 'master' ]
     force_tag: true
 
   docker:
@@ -18,12 +15,8 @@ pipeline:
     context: ./2.7-slim/
     tag:
       - '2.7-slim'
-    when:
-      branch:
-        include: [ '2.7-slim', 'master' ]
     force_tag: true
 
-pipeline:
   docker:
     image: plugins/docker
     repo: registry.liskl.com/tstllc/alpine-python
@@ -31,12 +24,8 @@ pipeline:
     context: ./3.4/
     tag:
       - '3.4'
-    when:
-      branch:
-        include: [ '3.4', 'master' ]
     force_tag: true
 
-pipeline:
   docker:
     image: plugins/docker
     repo: registry.liskl.com/tstllc/alpine-python
@@ -44,9 +33,6 @@ pipeline:
     context: ./3.4-slim/
     tag:
       - '3.4-slim'
-    when:
-      branch:
-        include: [ '3.4-slim', 'master' ]
     force_tag: true
 
 publish:

@@ -1,4 +1,7 @@
-FROM tstllc-base:latest
+FROM registry.liskl.com/tstllc/alpine-base:latest
+
+# Dev-Ops Team
+MAINTAINER dl_team_devops@tstllc.net
 
 # Install needed packages. Notes:
 #   * dumb-init: a proper init system for containers, to reap zombie children

@@ -1,7 +1,7 @@
 pipeline:
   docker:
     image: plugins/docker
-    repo: registry.liskl.com/tstllc/alpine-python
+    repo: registry.tstllc.net/llisk/alpine-python
     dockerfile: ./2.7/Dockerfile
     context: ./2.7/
     tag:
@@ -10,7 +10,7 @@ pipeline:
 
   docker:
     image: plugins/docker
-    repo: registry.liskl.com/tstllc/alpine-python
+    repo: registry.tstllc.net/llisk/alpine-python
     dockerfile: ./2.7-slim/Dockerfile
     context: ./2.7-slim/
     tag:
@@ -19,7 +19,7 @@ pipeline:
 
   docker:
     image: plugins/docker
-    repo: registry.liskl.com/tstllc/alpine-python
+    repo: registry.tstllc.net/llisk/alpine-python
     dockerfile: ./3.4/Dockerfile
     context: ./3.4/
     tag:
@@ -28,7 +28,7 @@ pipeline:
 
   docker:
     image: plugins/docker
-    repo: registry.liskl.com/tstllc/alpine-python
+    repo: registry.tstllc.net/llisk/alpine-python
     dockerfile: ./3.4-slim/Dockerfile
     context: ./3.4-slim/
     tag:
@@ -37,7 +37,7 @@ pipeline:
 
 publish:
   docker:
-    repo: registry.liskl.com/tstllc/alpine-python
+    repo: registry.tstllc.net/llisk/alpine-python
     tag:
 #      - ${DRONE_BRANCH}-latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}

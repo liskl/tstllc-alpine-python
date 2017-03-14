@@ -2,6 +2,10 @@ pipeline:
   docker:
     image: plugins/docker
     repo: registry.tstllc.net/llisk/alpine-python
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
+    registry: registry.tstllc.net
     dockerfile: ./2.7/Dockerfile
     context: ./2.7/
     tag:

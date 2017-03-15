@@ -43,7 +43,6 @@ publish:
   docker:
     repo: registry.tstllc.net/llisk/alpine-python
     tag:
-#      - ${DRONE_BRANCH}-latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     when:
       branch:
